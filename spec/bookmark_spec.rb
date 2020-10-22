@@ -11,4 +11,11 @@ describe Bookmark do
     end
   end
 
+  describe '.create' do
+    it 'adds a bookmark to the bookmark manager' do
+      Bookmark.create('www.url.com')
+      expect(Bookmark.all).to include('www.url.com')
+    end
+  end
+
 end

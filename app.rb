@@ -5,6 +5,11 @@ class BookmarkManager < Sinatra::Base
 
   get '/' do
     "Hello World!"
+    erb :'bookmarks/add_bookmark'
+  end
+
+  post '/add_bookmark' do
+    @bookmark = params[:url]
   end
 
 get '/bookmarks' do
