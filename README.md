@@ -15,3 +15,7 @@ I would like to see a list of bookmarks.
 - We build a table within bookmark_manager database, called bookmarks.
 - In order to keep a record of sql routines we create a folder and sub-folder called db and migrations, respectively.
 
+Setting up a test database
+$> psql postgres
+admin=# CREATE DATABASE "bookmark_manager_test";
+admin=# CREATE TABLE bookmarks(id SERIAL PRIMARY KEY, url VARCHAR(60));
