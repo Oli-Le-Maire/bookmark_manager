@@ -1,10 +1,9 @@
-describe NewBookmarks do
-  describe '/bookmarks/new' do
-    it 'adds bookmarks to the /bookmarks page list' do
+feature 'adding a bookmark' do
+  scenario 'adds bookmarks to the /bookmarks page list' do
       visit('/')
       fill_in(:url, with: 'www.URL.com')
+      click_button('Submit')
       expect(page).to have_content('www.URL.com')
-      end
     end
 end
 

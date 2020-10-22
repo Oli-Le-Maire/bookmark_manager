@@ -11,9 +11,10 @@ class BookmarkManager < Sinatra::Base
     erb :bookmarks
   end
 
-  post 'tbc'
+  post '/bookmark_new' do
+    BookmarkList.create(params[:url])
+    redirect to('/bookmarks')
   end
-
 
   run! if app_file == $PROGRAM_NAME
 end

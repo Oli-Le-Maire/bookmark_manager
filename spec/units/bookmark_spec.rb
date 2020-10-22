@@ -8,4 +8,11 @@ describe BookmarkList do
       expect(bookmarks).to include('http://www.google.com')
       end
     end
+
+  describe '#create' do
+    it 'adds a bookmark to bookmarklist.all' do
+      BookmarkList.create('www.url.com')
+      expect(BookmarkList.all).to include('www.url.com')
+    end
+  end
   end
