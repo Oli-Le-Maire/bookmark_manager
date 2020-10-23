@@ -11,8 +11,9 @@ describe BookmarkList do
 
   describe '#create' do
     it 'adds a bookmark to bookmarklist.all' do
-      BookmarkList.create('www.url.com')
-      expect(BookmarkList.all).to include('www.url.com')
+      bookmark = BookmarkList.create('www.url.com', 'URL').first
+      expect(bookmark['url']).to eq 'www.url.com'
+      expect(bookmark['title']).to eq 'URL'
     end
   end
-  end
+end

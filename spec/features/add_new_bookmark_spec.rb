@@ -2,8 +2,9 @@ feature 'adding a bookmark' do
   scenario 'adds bookmarks to the /bookmarks page list' do
       visit('/')
       fill_in(:url, with: 'www.URL.com')
+      fill_in(:title, with: 'URL')
       click_button('Submit')
-      expect(page).to have_content('www.URL.com')
+      expect(page).to have_link('URL', href: 'www.URL.com')
     end
 end
 
